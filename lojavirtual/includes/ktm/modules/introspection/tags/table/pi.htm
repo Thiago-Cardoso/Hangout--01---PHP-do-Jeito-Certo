@@ -1,0 +1,251 @@
+<html>
+<head>
+<title>Table Properties</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="../../../../../common/js/base.js"></script>
+<script src="../../../../../common/js/utility.js"></script>
+<script src="../common.js"></script>
+</head>
+<body onLoad="initializeUI('table')">
+<div id="Properties_table___objectName__" class="property_body ktml_bg">
+<nobr>
+  <table id="ARMP" border="0">
+    <tr>
+      <td id="pannels">
+	  <div id="Properties_table_props_simple___objectName__">
+          <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+              <td width="100%">
+              <table border="0" cellspacing="0" cellpadding="0" class="introspector">
+                  <tr>
+                    <td nowrap="nowrap" style="white-space: nowrap !important; text-align: left">||Introspection ID Label||:&nbsp;</td>
+                    <td rowspan="2" nowrap="nowrap"><img ssrc="__relativeImagePath__/vspacer.gif" height="44" width="2" border="0" style="margin: 0px 3px"></td>
+                    <td rowspan="2">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td style="white-space: nowrap !important; text-align: right" nowrap="nowrap">&nbsp;||Introspection Width||:&nbsp;</td>
+                          <td nowrap="nowrap"><input name="text2" type="text"
+							class="ktml_input"
+							id="Properties_table_width___objectName__"
+							onBlur="if (!util_checkMeasureUnit(this, 1000)) { return false;};window['ktml___objectName__'].introspector.apply('width', this.value);"
+							onkeypress="return util_preventEvent(this, event);" size="4"
+							maxlength="6"
+							help_topic_id="PI_table_width"/></td>
+                        </tr>
+                        <tr>
+                          <td style="white-space: nowrap !important; text-align: right" nowrap="nowrap">&nbsp;||Introspection Height||:&nbsp;</td>
+                          <td nowrap="nowrap"><input name="text2" type="text"
+									class="ktml_input"
+									id="Properties_table_height___objectName__"
+									onBlur="if (!util_checkMeasureUnit(this, 1000)) { return false;};window['ktml___objectName__'].introspector.apply('height', this.value);"
+									onkeypress="return util_preventEvent(this, event);" size="4"
+									maxlength="6"
+									help_topic_id="PI_table_height"/></td>
+                        </tr>
+                      </table></td>
+                    <td rowspan="2">
+                    	<table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td style="white-space: nowrap !important; text-align:right" nowrap="nowrap">&nbsp;||Introspection CellPadd||:&nbsp;</td>
+                          <td nowrap="nowrap"><input type="text"
+								class="ktml_input"
+								id="Properties_table_cellpadding___objectName__"
+								maxlength="6" size="4"
+								help_topic_id="PI_table_cell_pad"
+								onBlur="if (!util_checkMeasureUnit(this, 30)) { return false;};window['ktml___objectName__'].introspector.apply('cellPadding', this.value);"
+								onkeypress="return util_preventEvent(this, event);"/></td>
+						</tr>
+                        <tr>
+                          <td style="white-space: nowrap !important; text-align:right" nowrap="nowrap">&nbsp;||Introspection CellSpace||:&nbsp;</td>
+                          <td nowrap="nowrap"><input type="text"
+								class="ktml_input"
+								id="Properties_table_cellspacing___objectName__"
+								maxlength="6" size="4"
+								help_topic_id="PI_table_cell_space"
+								onBlur="if (!util_checkMeasureUnit(this, 30)) { return false;};window['ktml___objectName__'].introspector.apply('cellSpacing', this.value);"
+								onkeypress="return util_preventEvent(this, event);"/></td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td nowrap="nowrap" style="text-align:right">&nbsp;||Introspection Border||:&nbsp;</td>
+                    <td nowrap="nowrap"><input type="text"
+						class="ktml_input"
+						id="Properties_table_border___objectName__"
+						style="width: 64px; min-width: 66px;"
+						onBlur="PropertiesUI_intValue(this); if (!util_checkMeasureUnit(this, 30)) { return false;}; window['ktml___objectName__'].introspector.apply('border', this.value);"
+						onkeypress="return util_preventEvent(this, event);" size="4"
+						maxlength="6"
+						help_topic_id="PI_table_border"/></td>
+                    <td nowrap="nowrap" style="text-align: right; white-space: nowrap !important">&nbsp;||Header Rows||:&nbsp;</td>
+                    <td nowrap="nowrap"><input type="text"
+						class="ktml_input"
+						id="Properties_table_header___objectName__"
+						size="4"
+						maxlength="6"
+						onBlur="PropertiesUI_intValue(this); window['ktml___objectName__'].introspector.apply('thead', this.value);"
+						onkeypress="return util_preventEvent(this, event);"
+						help_topic_id="PI_table_header"/></td>
+				  </tr>
+                  <tr>
+                    <td nowrap="nowrap" style="text-align:left"><input name="Properties_table_id___objectName__"
+						tabindex="1"
+						type="text"
+						class="ktml_input"
+						id="Properties_table_id___objectName__"
+						help_topic_id="PI_table_id"
+						onBlur="window['ktml___objectName__'].introspector.apply('id', this.value);"
+						onKeyPress="return util_preventEvent(this, event);"
+						size="12"/></td>
+                    <td style="white-space: nowrap !important; text-align:right">&nbsp;||Introspection Align||:&nbsp;</td>
+                    <td><select class="ktml_select"
+						id="Properties_table_align___objectName__"
+						style="width: 70px"
+						onChange="window['ktml___objectName__'].introspector.apply('align', this.value);"
+						help_topic_id="PI_table_align" >
+							<option value="">||Introspection Option Default||</option>
+							<option value="left">||Introspection Option Left||</option>
+							<option value="right">||Introspection Option Right||</option>
+							<option value="center">||Introspection Option Center||</option>
+                      </select></td>
+                    <td nowrap="nowrap" style="text-align: right; white-space: nowrap !important">&nbsp;||Footer Rows||:&nbsp;</td>
+                    <td><input type="text"
+						class="ktml_input"
+						id="Properties_table_footer___objectName__"
+						onBlur="PropertiesUI_intValue(this); window['ktml___objectName__'].introspector.apply('tfoot', this.value);"
+						onkeypress="return util_preventEvent(this, event);"
+						size="4"
+						maxlength="6"
+						help_topic_id="PI_table_footer"/></td>
+                  </tr>
+                </table></td>
+                <td>&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+        <div id="Properties_table_props_advanced___objectName__">
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td nowrap="nowrap" style="white-space: nowrap !important; text-align: right">&nbsp;||Table Caption||:&nbsp;</td>
+              <td nowrap="nowrap" 
+					style="white-space: nowrap !important; text-align: right"><input type="text" 
+						class="ktml_input" 
+						id="Properties_table_caption___objectName__" 
+						style="width: 80px;" 
+						onBlur="window['ktml___objectName__'].introspector.apply('caption', this.value);" 
+						onKeyPress="return (util_preventEvent(this, event)===false)? false:true"
+						value="" 
+						size="14" 
+						help_topic_id="PI_table_caption"></td>
+              <td nowrap="nowrap" style="text-align: right; white-space: nowrap !important;">&nbsp;||Table Caption Position||:&nbsp;</td>
+              <td nowrap="nowrap"><select class="ktml_select"  style="width: 70px" 
+              help_topic_id="PI_table_caption_pos"
+              onChange="window['ktml___objectName__'].introspector.apply('captionposition', this.value);">
+                  <option value="top">||Introspection Option Top||</option>
+                  <option value="bottom">||Introspection Option Bottom||</option>
+                </select></td>
+              <td nowrap="nowrap" 
+			  	class="introspector"
+				style="text-align: right; white-space: nowrap !important">&nbsp;||Introspection BG||:&nbsp;</td>
+              <td colspan="4" nowrap="nowrap" class="introspector"
+					style="text-align: right; white-space: nowrap !important"><input type="text"
+					class="ktml_input"
+					id="Properties_table_bgimage___objectName__"
+					style="width: 185px"
+					onBlur="window['ktml___objectName__'].introspector.apply('bgimage', this.value);"
+					onkeypress="return util_preventEvent(this, event);"
+					size="35"
+					help_topic_id="PI_table_bg_image" /></td>
+              <td class="introspector"><img ssrc="__relativeImagePath__/insert_image.gif"
+					alt = "||Introspection Browse for File||" title="||Introspection Browse for File||"
+					help_topic_id="PI_table_bg_image"
+					id="Properties_table_bgimage_browse___objectName__"
+					onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].openSelectFile({submode:'media', filter:'images', callback:[window['ktml___objectName__'].introspector, 'apply', 'bgimage']});"
+					__evstr__
+					kttype="btn"/></td>
+            </tr>
+            <tr>
+              <td nowrap="nowrap" style="white-space: nowrap !important; text-align: right">&nbsp;||Summary||:&nbsp;</td>
+              <td nowrap="nowrap" 
+			    	style="white-space: nowrap !important; text-align: right"><input type="text" 
+			    		class="ktml_input" 
+			    		id="Properties_table_summary___objectName__" 
+			    		style="width: 80px;" 
+			    		onBlur="window['ktml___objectName__'].introspector.apply('summary', this.value);" 
+			    		onKeyPress="return (util_preventEvent(this, event)===false)? false:true"
+			    		value="" 
+			    		size="14" 
+			    		help_topic_id="PI_table_summary"></td>
+              <td nowrap="nowrap" style="text-align: right; white-space: nowrap !important">&nbsp;||Caption Align||:&nbsp;</td>
+              <td nowrap="nowrap"><select class="ktml_select" style="width: 70px" 
+              help_topic_id="PI_table_caption_align"
+              onChange="window['ktml___objectName__'].introspector.apply('captionalign', this.value);">
+                  <option value="left">||Introspection Option Left||</option>
+                  <option value="center" selected="selected">||Introspection Option Center||</option>
+                  <option value="right">||Introspection Option Right||</option>
+                </select></td>
+              <td nowrap="nowrap" class="introspector" style="text-align: right; white-space: nowrap !important">&nbsp;||Introspection BGColor||:&nbsp;</td>
+              <td nowrap="nowrap" class="introspector" style="text-align: left; white-space: nowrap !important"><input type="text"
+					class="ktml_input"
+					id="Properties_table_bgcolor___objectName__"
+					size="8"
+					style="width: 45px"
+					onkeyup="PropertiesUI_colorValue(this);"
+					help_topic_id="PI_table_bg_color"
+					onBlur="window['ktml___objectName__'].introspector.apply('bgColor', this.value);"
+					onkeypress="return util_preventEvent(this, event);"/></td>
+              <td class="introspector"><img help_topic_id="PI_table_bg_color"
+					alt="||Table bg color picker||"
+					title="||Table bg color picker||"
+					onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].introspector.chooseBgColor(this, 'Properties_table_bgcolor___objectName__');"
+					ssrc="__relativeImagePath__/bgcolor.gif"
+					width="16" height="12" vspace="4" hspace="2"
+					border="0"
+					__evstr__
+					kttype="btn"/><span class="colorMonitor"
+					id="Properties_table_bgColorMonitor___objectName__">&nbsp;</span></td>
+              <td nowrap="nowrap" 
+			  		class="introspector" 
+					style="white-space: nowrap !important; text-align: right">&nbsp;||Introspection BrdColor||:&nbsp;</td>
+              <td nowrap="nowrap" class="introspector"
+						style="text-align: right"><input type="text"
+							class="ktml_input"
+							id="Properties_table_brdcolor___objectName__"
+							size="8"
+							style="width: 45px"
+							onkeyup="PropertiesUI_colorValue(this);"
+							help_topic_id="PI_table_border_color"
+							onBlur="window['ktml___objectName__'].introspector.apply('borderColor', this.value);"
+							onkeypress="return util_preventEvent(this, event);"/></td>
+              <td class="introspector"><img alt="||Table bg color picker||"
+					title="||Table bg color picker||"
+					help_topic_id="PI_table_border_color"
+					onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].introspector.chooseBrdColor(this, 'Properties_table_brdcolor___objectName__');"
+					ssrc="__relativeImagePath__/bgcolor.gif"
+					width="16" height="12" vspace="4" hspace="2"
+					border="0"
+					__evstr__
+					kttype="btn"/><span class="colorMonitor"
+					id="Properties_table_brdColorMonitor___objectName__">&nbsp;</span></td>
+            </tr>
+          </table>
+        </div></td>
+      <td valign="top" style="text-align: right; vertical-align: top; white-space: nowrap" id="toggle button"><input type="button" 
+				value="||Advanced||" 
+				class="ktml_button"
+				style="width:60px;"
+				id="Properties_table_props_simple_btn___objectName__"
+				help_topic_id="PI_table_advanced"
+				onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};Introspection_toggleAdvanced('__objectName__', 'table')">
+        <input type="button" 
+				value="||Simple||" 
+				class="ktml_button"
+				style="width:60px; display: none;"
+				id="Properties_table_props_advanced_btn___objectName__"
+				help_topic_id="PI_table_simple"
+				onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};Introspection_toggleAdvanced('__objectName__', 'table')"></td>
+    </tr>
+  </table>
+  </nobr>
+  </div>
+</body>
+</html>

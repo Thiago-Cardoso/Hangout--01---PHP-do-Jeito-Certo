@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_categorias" value="name:id;datatype:int,name:nome;datatype:string,name:descricao;datatype:blob,name:imagem;datatype:string,name:count_id_categ_1;datatype:int" />
+	<infoitem key="MM_css_include" value="" />
+</info>

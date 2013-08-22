@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_tags" value="name:id;datatype:int,name:titulo;datatype:blob,name:palavras;datatype:blob,name:descricao;datatype:blob,name:header;datatype:blob,name:rodape;datatype:blob" />
+	<infoitem key="UD_rscontato" value="name:nome;datatype:int,name:email;datatype:int,name:telefone;datatype:int,name:mensagem;datatype:int,name:id;datatype:int" />
+</info>

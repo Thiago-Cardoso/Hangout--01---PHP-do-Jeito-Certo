@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>Image Properties</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="../../../../../common/js/base.js"></script>
+<script src="../../../../../common/js/utility.js"></script>
+<script src="../common.js"></script>
+</head>
+<body onLoad="initializeUI('img')">
+<div id="Properties_img___objectName__" class="property_body ktml_bg"> <nobr>
+  <table id="ARMP" border="0" >
+    <tr>
+      <td id="pannels"><div id="Properties_img_props_simple___objectName__">
+          <table border="0" class="introspector" cellpadding="0" cellspacing="0">
+            <tr>
+              <td nowrap="nowrap" style="white-space: nowrap !important; text-align: left">||Introspection ID Label||:&nbsp;</td>
+              <td rowspan="2" nowrap="nowrap"><img ssrc="__relativeImagePath__/vspacer.gif" height="44" width="2" border="0" style="margin: 0px 3px"></td>
+              <td rowspan="2"><table border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="white-space: nowrap !important; text-align: right" 
+						nowrap="nowrap">&nbsp;||Introspection Width||:&nbsp;</td>
+                    <td nowrap="nowrap"><input type="text"
+							class="ktml_input"
+							id="Properties_img_width___objectName__"
+							maxlength="6"
+							size="4"
+							help_topic_id="PI_image_width"
+							onBlur="if (!util_checkMeasureUnit(this, 3000)) { document.getElementById('Properties_img_height___objectName__').value = ''; return false;};window['ktml___objectName__'].introspector.apply('width', this.value);"
+							onkeyup="var o = utility.dom.setEventVars(event); if (window['ktml___objectName__'].pis['img'].bindsize) { window['ktml___objectName__'].pis['img'].syncHSize(o.e); }"
+							onKeyPress="return util_preventEvent(this, event);" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="white-space: nowrap !important; text-align: right" 
+							nowrap="nowrap">&nbsp;||Introspection Height||:&nbsp;</td>
+                    <td nowrap="nowrap"><input type="text"
+								class="ktml_input"
+								id="Properties_img_height___objectName__"
+								maxlength="6" size="4"
+								help_topic_id="PI_image_height"
+								onBlur="if (!util_checkMeasureUnit(this, 3000)) { document.getElementById('Properties_img_width___objectName__').value = ''; return false;};window['ktml___objectName__'].introspector.apply('height', this.value);"
+								onkeyup="var o = utility.dom.setEventVars(event); if (window['ktml___objectName__'].pis['img'].bindsize) { window['ktml___objectName__'].pis['img'].syncWSize(o.e); }"
+								onKeyPress="return util_preventEvent(this, event);"/></td>
+                  </tr>
+                </table></td>
+              <td nowrap="nowrap" 
+							rowspan="2" 
+							style="text-align: left"><img
+								id="Properties_img_constrain___objectName__" 
+								help_topic_id="PI_image_constrain"
+								onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].pis['img'].bindImageSize(this, '__relativeImagePath__');"
+								ssrc="__relativeImagePath__/bound.gif"
+								border="0"
+								width="20"
+								height="32"
+								alt="||Constrain||"
+								title="||Constrain||"/></td>
+              <td style="white-space: nowrap !important; text-align: right" nowrap="nowrap">&nbsp;||Image Src||:&nbsp;</td>
+              <td nowrap="nowrap"><input type="text" style="width: 150px"
+								class="ktml_input"
+								id="Properties_img_src___objectName__"
+								size="30"
+								help_topic_id="PI_image_source"
+								onFocus="this.oldVal=this.value;"
+								onBlur="window['ktml___objectName__'].introspector.apply('src', this.value);"
+								onkeypress="return util_preventEvent(this, event);"/></td>
+              <td nowrap="nowrap" style="white-space: nowrap !important; text-align: left"><img
+								ssrc="__relativeImagePath__/insert_image.gif"
+								alt = "||Introspection Browse for File||" title="||Introspection Browse for File||"
+								help_topic_id="PI_image_source"
+								id="Properties_img_src_browse___objectName__"
+								onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].openSelectFile({submode:'media', filter:'images', callback:[window['ktml___objectName__'].introspector, 'apply', 'src']});"
+								__evstr__
+								kttype="btn"/></td>
+              <td nowrap="nowrap" style="white-space: nowrap !important; text-align: right">&nbsp;||Introspection Border||:&nbsp;</td>
+              <td nowrap="nowrap" style="text-align: right"><input type="text"
+									class="ktml_input"
+									id="Properties_img_border___objectName__"
+									maxlength="2" size="2"
+									onkeyup="PropertiesUI_intValue(this);"
+									help_topic_id="PI_image_border"
+									onBlur="if (!util_checkMeasureUnit(this, 100)) { return false;};window['ktml___objectName__'].introspector.apply('border', this.value);"
+									onkeypress="return util_preventEvent(this, event);"/></td>
+            </tr>
+            <tr>
+				  <td nowrap="nowrap" style="text-align:left"><input name="Properties_img_id___objectName__"
+												tabindex="1"
+												type="text"
+												class="ktml_input"
+												id="Properties_img_id___objectName__"
+												help_topic_id="PI_image_id"
+												onBlur="window['ktml___objectName__'].introspector.apply('id', this.value);"
+												onKeyPress="return util_preventEvent(this, event);"
+												size="12"/>&nbsp;</td>
+              <td style="white-space: nowrap !important; text-align: right" nowrap="nowrap">&nbsp;||Image Link||:&nbsp;</td>
+              <td nowrap="nowrap"><input type="text" style="width: 150px"
+									class="ktml_input"
+									id="Properties_img_link___objectName__"
+									size="30"
+									help_topic_id="PI_image_link"
+									onBlur="window['ktml___objectName__'].introspector.apply('link', this.value);"
+									onkeypress="return util_preventEvent(this, event);"/>
+              <td nowrap="nowrap" style="white-space: nowrap !important; text-align: left"><img
+									ssrc="__relativeImagePath__/dir.gif"
+									alt="||Link Browse||"
+									border="0"
+									title="||Link Browse||"
+									help_topic_id="PI_image_link"
+									onClick="if (this.disabled){return true};if(window['ktml___objectName__'].toolbar.checkHelp(this, event)){ return true;}window['ktml___objectName__'].openSelectFile({submode: 'file', filter:'documents', callback:[window['ktml___objectName__'].introspector, 'apply', 'link']});"
+									kttype="btn"
+									id="__objectName__LinkBrowse"
+									__evstr__/></td>
+              <td nowrap="nowrap" colspan="2">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+        <div id="Properties_img_props_advanced___objectName__">
+          <table class="introspector"  border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td nowrap="nowrap" class="introspector" style="white-space: nowrap !important; text-align: right">&nbsp;||Introspection HSpace||:&nbsp;</td>
+              <td nowrap="nowrap" class="introspector"><input type="text"
+								class="ktml_input"
+								id="Properties_img_hspace___objectName__"
+								maxlength="2" size="2"
+								help_topic_id="PI_image_H_space"
+								onBlur="if (!util_checkMeasureUnit(this, 100)) { return false;};window['ktml___objectName__'].introspector.apply('hspace', this.value);"
+								onkeypress="return util_preventEvent(this, event);"/></td>
+              <td nowrap="nowrap" class="introspector" style="white-space: nowrap !important; text-align: right">&nbsp;||Introspection AltText||:&nbsp;</td>
+              <td><input name="text" type="text"
+									class="ktml_input"
+									id="Properties_img_alt___objectName__" style="width: 172px"
+									onBlur="window['ktml___objectName__'].introspector.apply('alt', this.value);"
+									onkeypress="return util_preventEvent(this, event);"
+									size="26"
+									help_topic_id="PI_image_alt_text"/></td>
+            </tr>
+            <tr>
+              <td nowrap="nowrap" class="introspector" style="white-space: nowrap !important; text-align: right">&nbsp;||Introspection VSpace||:&nbsp;</td>
+              <td nowrap="nowrap" class="introspector"><input type="text"
+									class="ktml_input"
+									id="Properties_img_vspace___objectName__"
+									maxlength="2" size="2"
+									help_topic_id="PI_image_V_space"
+									onBlur="if (!util_checkMeasureUnit(this, 100)) { return false;};window['ktml___objectName__'].introspector.apply('vspace', this.value);"
+									onkeypress="return util_preventEvent(this, event);"/></td>
+              <td 
+							nowrap="nowrap" class="introspector" style="white-space: nowrap !important; text-align: right" >&nbsp;||Image Align||:&nbsp;</td>
+              <td><select name="select"
+								class="ktml_select"
+								id="Properties_img_align___objectName__" style="width: 90px"
+								onChange="window['ktml___objectName__'].introspector.apply('align', this.value);"
+								help_topic_id="PI_image_align">
+                  <option value="">||Introspection Option Default||</option>
+                  <option value="baseline">||Introspection Option Baseline||</option>
+                  <option value="top">||Introspection Option Top||</option>
+                  <option value="middle">||Introspection Option Middle||</option>
+                  <option value="bottom">||Introspection Option Bottom||</option>
+                  <option value="textTop">||Texttop||</option>
+                  <option value="absmiddle">||AbsoluteMiddle||</option>
+                  <option value="absbottom">||AbsoluteBottom||</option>
+                  <option value="left">||Introspection Option Left||</option>
+                  <option value="right">||Introspection Option Right||</option>
+                </select></td>
+            </tr>
+          </table>
+        </div></td>
+      <td valign="top" style="text-align: right; vertical-align: top; white-space: nowrap" id="toggle button"><input type="button" 
+			value="||Advanced||" 
+			class="ktml_button"
+				style="width:60px;"
+				id="Properties_img_props_simple_btn___objectName__"
+				help_topic_id="PI_image_advanced"
+				onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};Introspection_toggleAdvanced('__objectName__', 'img')">
+        <input type="button" 
+				value="||Simple||"
+				class="ktml_button"
+				style="width:60px; display: none;"
+				id="Properties_img_props_advanced_btn___objectName__"
+				help_topic_id="PI_image_simple"
+				onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};Introspection_toggleAdvanced('__objectName__', 'img')">
+      </td>
+    </tr>
+  </table>
+  </nobr></div>
+</body>
+</html>

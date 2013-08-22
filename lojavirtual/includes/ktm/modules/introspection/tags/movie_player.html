@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.1 Strict //EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Movie Player</title>
+<script src="../../../../common/js/base.js"></script>
+<script src="../../../../common/js/utility.js"></script>
+<script>if (is.mozilla) {
+	document.write('<meta http-equiv="Content-Type" content="text/html; cha'+'rset=' + opener.document.characterSet + '">');
+}</script>
+<style>
+body {
+	margin: 0px;
+	padding:0px;
+	height:100%;
+	border-width:0px;
+	overflow:hidden;
+}
+
+#movie_player {
+	width:400px;
+	height:280px;
+	overflow:auto;
+	text-align:center;
+}
+</style>
+<script>
+var plyStr = '';
+var ktml = opener.ktmls[opener.play_window_arguments.ktml_counter];
+var cur_pi = ktml.pis[ktml.introspector.currentPI];
+document.title = opener.translate(document.title);
+
+function init(){
+	if (is.ie) {
+		document.charset = opener.document.charset;
+	}
+	utility.window.setModal();
+	plyStr = opener.play_window_arguments.movie_html;
+	plyStr = plyStr.match(/<embed[^<]*<\/embed>/i);
+	if(plyStr){
+		plyStr = plyStr[0];
+		document.getElementById('movie_player').innerHTML = plyStr.replace(/^\s*/gi, '');
+	} else {
+		window.close();
+	}
+}
+
+function exit(){
+	cur_pi.apply('stop');
+}
+</script>
+
+
+</head>
+<body onload="init()" onunload="exit()">
+<div id="movie_player"></div>
+</body>
+</html>

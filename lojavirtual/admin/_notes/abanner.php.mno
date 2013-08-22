@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_rsgeral" value="name:titulo;datatype:int,name:conteudo;datatype:int,name:leia_mais;datatype:int,name:data;datatype:int,name:id;datatype:int" />
+</info>

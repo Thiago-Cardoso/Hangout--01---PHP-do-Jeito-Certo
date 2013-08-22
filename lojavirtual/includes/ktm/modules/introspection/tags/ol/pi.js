@@ -1,0 +1,7 @@
+
+function OrderedListPI(owner){this.owner=owner;};function OrderedListPI_apply(propName,propValue){var inspected=this.owner.inspectedNode;switch(propName){case"id":if(propValue!=""){inspected.setAttribute("id",propValue);}else{inspected.removeAttribute("id");}
+break;case"type":inspected.type=propValue;for(var i=0;i<inspected.childNodes.length;i++){if(inspected.childNodes[i].nodeType==1&&inspected.childNodes[i].tagName.toLowerCase()=="li"){inspected.childNodes[i].removeAttribute("type");}}
+break;case"start":if(propValue){this.owner.inspectedNode.start=propValue;}else{this.owner.inspectedNode.removeAttribute("start");}
+break;}
+try{fixFocusHack(0);}
+catch(e){}};function OrderedListPI_inspect(propName,propValue){util_safeSetFieldValue("Properties_ol_id_"+this.owner.name,this.owner.inspectedNode.getAttribute('id'));var propValue=this.owner.inspectedNode.getAttribute("type")||"";utility.dom.selectOption(document.getElementById("Properties_ol_type_"+this.owner.name),propValue);util_safeSetFieldValue("Properties_ol_start_"+this.owner.name,this.owner.inspectedNode.getAttribute("start"));};OrderedListPI.prototype.apply=OrderedListPI_apply;OrderedListPI.prototype.inspect=OrderedListPI_inspect;window.KtmlPIObjects["ol"]=OrderedListPI;

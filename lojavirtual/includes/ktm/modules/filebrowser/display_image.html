@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Image</title>
+<style>
+body {
+	margin:0px;
+	border-width:0px;
+	padding:0px;
+	overflow:hidden;
+}
+img {
+	margin:0px;
+	padding:0px;
+	border-width:0px;
+}
+</style>
+
+<script>
+var imageUrl = window.location.search;
+imageUrl = imageUrl.match(/image=([^=&]*)/);
+if (imageUrl) {
+	if (imageFileName = imageUrl[1].match(/([^\/]*$)/)) {
+		document.title = imageFileName[1];
+	}
+	
+	imageUrl = '<img src="' + unescape(imageUrl[1]) + '" onclick="window.close()"/>';
+	var NS = (navigator.appName=="Netscape")?true:false;
+}
+
+function fitImage() {
+	if (!imageUrl) {
+		return;
+	}
+	iWidth = (NS)?window.innerWidth:document.body.clientWidth;
+	iHeight = (NS)?window.innerHeight:document.body.clientHeight;
+	var iw = document.images[0].width;
+	var ih = document.images[0].height;
+
+	if (iw > window.screen.availWidth) {
+		document.body.style.overflow = "scroll";
+		iWidth = window.screen.availWidth - iWidth;// - 40;
+	} else {
+		iWidth = iw - iWidth;
+	}
+
+	if (ih > window.screen.availHeight) {
+		document.body.style.overflow = "scroll";
+		iHeight = window.screen.availHeight - iHeight -50;
+	} else {
+		iHeight = ih - iHeight;
+	}
+
+	window.resizeBy(iWidth, iHeight);
+	self.focus();
+};
+</script>
+</head>
+
+<body onload="fitImage()"  bgcolor="#FFFFFF" topmargin="0" marginheight="0" leftmargin="0" marginwidth="0"><script>if(imageUrl) {document.write(imageUrl);}</script></body>
+</html>

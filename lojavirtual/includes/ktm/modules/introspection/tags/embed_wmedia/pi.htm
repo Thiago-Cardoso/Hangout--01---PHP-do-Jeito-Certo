@@ -1,0 +1,227 @@
+<html>
+<head>
+<title>Windows Media Properties</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="../../../../../common/js/base.js"></script>
+<script src="../../../../../common/js/utility.js"></script>
+<script src="../common.js"></script>
+</head>
+<body onLoad="initializeUI('embed_wmedia')">
+<!-- NOTE! 
+This is an Auto-Resizeable Multiple Panels property inspector, that is, its expanded width
+will be the actual width of the widest pannel it contains, regardless it is displayed or not.
+Do not delete the "ARMP" id. -->
+<div id="Properties_embed_wmedia___objectName__" class="property_body ktml_bg"> <nobr>
+  <table id="ARMP" border="0" >
+    <tr>
+      <td id="pannels"><div id="Properties_embed_wmedia_props_simple___objectName__">
+          <table border="0" cellspacing="0" cellpadding="0" class="introspector">
+            <tr>
+              <td nowrap="nowrap" style="text-align: left"><label style="white-space: nowrap !important" for="Properties_embed_wmedia_name___objectName__"
+									class="introspection_label">||Introspection ID Label||:&nbsp;</label></td>
+              <td rowspan="2" nowrap="nowrap"><img ssrc="__relativeImagePath__/vspacer.gif" height="44" width="2" border="0" style="margin: 0px 3px"></td>
+              <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" for="Properties_embed_wmedia_width___objectName__"
+								class="introspection_label">&nbsp;||W||:&nbsp;</label></td>
+              <td nowrap="nowrap"><input name="Properties_embed_wmedia_width___objectName__" 
+				type="text"
+				id="Properties_embed_wmedia_width___objectName__" 
+				size="3" 
+				maxlength="6" 
+				class="ktml_input"
+				help_topic_id="PI_wind_width"
+				onBlur="if (!util_checkMeasureUnit(this, 3000)) { return false;};window['ktml___objectName__'].introspector.apply('width', this.value);"
+				onkeypress="return util_preventEvent(this, event);"></td>
+              <td nowrap="nowrap" style="white-space: nowrap !important">&nbsp;<input type="button" 
+					value="||Initial Size||" 
+					class="ktml_button"
+					style="margin: 0px; width: 60px"
+					help_topic_id="PI_wind_size"
+					id="Properties_embed_wmedia_resetsize___objectName__"
+					onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};
+						window['ktml___objectName__'].introspector.clicked_button = this.id;
+						window['ktml___objectName__'].pis['embed_wmedia'].resetSize()
+					">&nbsp;</td>
+              <td nowrap="nowrap" style="text-align: right" colspan="">&nbsp;<label 
+					style="white-space: nowrap !important" 
+					for="Properties_embed_wmedia_filename___objectName__"
+					class="introspection_label">&nbsp;||WMedia File||:&nbsp;</label></td>
+              <td nowrap="nowrap" style="text-align: right"><input name="Properties_embed_wmedia_filename___objectName__"
+					type="text"
+					id="Properties_embed_wmedia_filename___objectName__"
+					size="40" maxlength="600"
+					class="ktml_input"
+					style="width: 185px"
+					help_topic_id="PI_wind_file"
+					onBlur="window['ktml___objectName__'].introspector.apply('filename', this.value);"
+					onkeypress="return util_preventEvent(this, event);">&nbsp;</td>
+              <td nowrap="nowrap" style="text-align:left; width:10px"><img ssrc="__relativeImagePath__/insert_windowsmedia.gif"
+					border="0"
+					help_topic_id="PI_wind_file"
+					id="Properties_embed_wmedia_src_browse___objectName__"
+					onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].openSelectFile({submode:'media', filter:'media', callback:[window['ktml___objectName__'].introspector, 'apply', 'filename']});"
+					__evstr__
+					align="absmiddle"
+					kttype="btn"/></td></tr>
+            <tr valign="middle">
+              <td nowrap="nowrap"><input name="Properties_embed_wmedia_id___objectName__"
+					type="text"
+					id="Properties_embed_wmedia_id___objectName__"
+					size="12"
+					maxlength="255"
+					class="ktml_input"
+					onBlur="window['ktml___objectName__'].introspector.apply('id', this.value);"
+					help_topic_id="PI_wind_id"
+					onKeyPress="return util_preventEvent(this, event);" />&nbsp;</td>
+              <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" 
+			  		for="Properties_embed_wmedia_height___objectName__"
+					class="introspection_label">&nbsp;||H||:&nbsp;</label></td>
+              <td nowrap="nowrap"><input name="Properties_embed_wmedia_height___objectName__"
+					type="text"
+					id="Properties_embed_wmedia_height___objectName__"
+					size="3"
+					maxlength="6"
+					class="ktml_input"
+					help_topic_id="PI_wind_height"
+					onBlur="if (!util_checkMeasureUnit(this, 3000)) { return false;};window['ktml___objectName__'].introspector.apply('height', this.value);"
+					onkeypress="return util_preventEvent(this, event);"></td>
+              <td nowrap="nowrap" style="white-space: nowrap">&nbsp;<input type="button" 
+					id="Properties_embed_wmedia_playstop1___objectName__"
+					value="||Play||"
+					class="ktml_button" 
+					style="margin: 0px; width: 60px"
+					help_topic_id="PI_wind_play"
+					onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};
+						if (window['ktml___objectName__'].MediaPlayer){
+							window['ktml___objectName__'].introspector.apply('stop');
+							window['ktml___objectName__'].introspector.clicked_button = null;
+						} else {
+							window['ktml___objectName__'].introspector.clicked_button = this.id;
+							window['ktml___objectName__'].introspector.apply('play');
+						}"
+					onBlur="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};
+						if (window['ktml___objectName__'].MediaPlayer){
+							window['ktml___objectName__'].introspector.apply('stop');
+						}"
+					>&nbsp;</td>
+              <td nowrap="nowrap">&nbsp;||Media Alternate||:&nbsp;</td>
+              <td nowrap="nowrap"><input type="text" tabindex="7"
+					class="ktml_input"
+					id="Properties_embed_wmedia_alternate___objectName__"
+					size="38"
+					style="width: 185px"
+					help_topic_id="Properties_embed_wmedia_alternate"
+					onFocus="this.oldVal=this.value;"
+					onBlur="window['ktml___objectName__'].introspector.apply('alternate', this.value);"
+					onkeypress="return util_preventEvent(this, event);"/></td>
+              <td nowrap="nowrap"><img ssrc="__relativeImagePath__/insert_image.gif"
+					alt = "||Introspection Browse for File||" title="||Introspection Browse for File||"
+					help_topic_id="PI_embed_wmedia_alternate"
+					id="Properties_embed_wmedia_alternate_browse___objectName__"
+					onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].openSelectFile({submode:'media', filter:'images', submode_detail:'forceurl', callback:[window['ktml___objectName__'].introspector, 'apply', 'alternate']});"
+					__evstr__
+					kttype="btn"/></td>
+            </tr>
+          </table>
+        </div>
+        <div id="Properties_embed_wmedia_props_advanced___objectName__">
+          <table border="0" cellspacing="0" cellpadding="0" class="introspector">
+            <tr>
+              <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" 
+			  		for="Properties_embed_wmedia_autostart___objectName__"
+					class="introspection_label">&nbsp;||Auto Start||:&nbsp;</label></td>
+              <td nowrap="nowrap" style="text-align: left"><input name="Properties_embed_wmedia_autostart___objectName__"
+					type="checkbox"
+					id="Properties_embed_wmedia_autostart___objectName__"
+					value="true"
+					help_topic_id="PI_wind_start"
+					onclick="window['ktml___objectName__'].introspector.apply('autostart', this.checked);"></td>
+              <td rowspan="2"style="width: 10px">&nbsp;</td>
+              
+              <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" 
+			  		for="Properties_embed_wmedia_ShowDisplay___objectName__"
+					class="introspection_label">&nbsp;||Show Display||:&nbsp;</label></td>
+			<td nowrap="nowrap" style="text-align: left"><input name="Properties_embed_wmedia_ShowDisplay___objectName__"
+								type="checkbox"
+								id="Properties_embed_wmedia_ShowDisplay___objectName__"
+								value="true"
+								help_topic_id="PI_wind_display"
+								onclick="window['ktml___objectName__'].introspector.apply('ShowDisplay', this.checked);"></td>
+              <td class="introspection_label" style="white-space: nowrap !important">&nbsp;||WMedia Align||:&nbsp;</td>
+              <td class="introspection_label" style="white-space: nowrap !important"><select name="select" 
+			  		class="ktml_select"
+					id="Properties_embed_wmedia_align___objectName__"
+					style="width: 112px"
+					onChange="window['ktml___objectName__'].introspector.apply('align', this.value);"
+					help_topic_id="PI_wind_align">
+					  <option value="">||Introspection Option Default||</option>
+					  <option value="baseline">||Introspection Option Baseline||</option>
+					  <option value="top">||Introspection Option Top||</option>
+					  <option value="middle">||Introspection Option Middle||</option>
+					  <option value="bottom">||Introspection Option Bottom||</option>
+					  <option value="texttop">||Texttop||</option>
+					  <option value="absmiddle">||AbsoluteMiddle||</option>
+					  <option value="absbottom">||AbsoluteBottom||</option>
+					  <option value="left">||Introspection Option Left||</option>
+					  <option value="right">||Introspection Option Right||</option></select></td><td>&nbsp;<input type="button"
+							id="Properties_embed_wmedia_playstop2___objectName__"
+							value="||Play||"
+							class="ktml_button" 
+							style="margin: 0px; width: 60px"
+							help_topic_id="PI_wind_play"
+							onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};
+								if (window['ktml___objectName__'].MediaPlayer){
+									window['ktml___objectName__'].introspector.apply('stop');
+									window['ktml___objectName__'].introspector.clicked_button = null;
+								} else {
+									window['ktml___objectName__'].introspector.clicked_button = this.id;
+									window['ktml___objectName__'].introspector.apply('play');
+								}"
+							onBlur="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};
+								if (window['ktml___objectName__'].MediaPlayer){
+									window['ktml___objectName__'].introspector.apply('stop');
+								}"
+							>&nbsp;</td>
+              <td style="text-align: left;" rowspan="2" nowrap="nowrap">&nbsp;</td>
+            </tr>
+            <tr>
+              <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" 
+			  		for="Properties_embed_wmedia_showcontrols___objectName__" 
+					class="introspection_label">&nbsp;||Show Controls||:&nbsp;</label></td>
+              <td nowrap="nowrap" style="text-align: left"><input name="Properties_embed_wmedia_showcontrols___objectName__"
+					type="checkbox"
+					id="Properties_embed_wmedia_showcontrols___objectName__"
+					value="true"
+					help_topic_id="PI_wind_showcontrols"
+					onclick="window['ktml___objectName__'].introspector.apply('showcontrols', this.checked);"></td>
+              <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" 
+			  		for="Properties_embed_wmedia_ShowStatusBar___objectName__"
+					class="introspection_label">&nbsp;||Show Status Bar||:&nbsp;</label></td>
+             <td nowrap="nowrap" style="text-align: left"><input name="Properties_embed_wmedia_ShowStatusBar___objectName__"
+					type="checkbox"
+					id="Properties_embed_wmedia_ShowStatusBar___objectName__"
+					value="true"
+					help_topic_id="PI_wind_status_bar"
+					onclick="window['ktml___objectName__'].introspector.apply('ShowStatusBar', this.checked);"></td>	
+              <td colspan="2"style="width: 10px">&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </div></td>
+      <td id="toggle button" valign="top" style="text-align: right; vertical-align: top" ><input type="button"
+					value="||Advanced||" 
+					class="ktml_button"
+					style="width: 60px;"
+					id="Properties_embed_wmedia_props_simple_btn___objectName__"
+					help_topic_id="PI_wind_advanced"
+					onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};Introspection_toggleAdvanced('__objectName__', 'embed_wmedia')">
+        <input type="button"
+					value="||Simple||"
+					class="ktml_button"
+					style="width: 60px; display: none"
+					id="Properties_embed_wmedia_props_advanced_btn___objectName__"
+					help_topic_id="PI_wind_simple"
+					onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};Introspection_toggleAdvanced('__objectName__', 'embed_wmedia')"/></td></tr>
+  </table>
+  </nobr></div>
+</body>
+</html>

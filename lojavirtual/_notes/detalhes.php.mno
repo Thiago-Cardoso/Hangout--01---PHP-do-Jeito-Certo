@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_tags" value="name:id;datatype:int,name:titulo;datatype:blob,name:palavras;datatype:blob,name:descricao;datatype:blob,name:header;datatype:blob,name:rodape;datatype:blob" />
+	<infoitem key="UD_detalhes" value="name:id;datatype:int,name:id_categ;datatype:int,name:produto;datatype:blob,name:descricao;datatype:blob,name:imagem;datatype:string,name:valor;datatype:string,name:frete;datatype:string,name:promocao;datatype:int,name:exibir;datatype:int,name:qtd_vendas;datatype:int" />
+</info>

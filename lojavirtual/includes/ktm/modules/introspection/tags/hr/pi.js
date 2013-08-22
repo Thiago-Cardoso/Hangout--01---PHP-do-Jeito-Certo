@@ -1,0 +1,16 @@
+
+function HorizontalRulePI(owner){this.owner=owner;this.hr_id="Properties_hr_id_"+this.owner.name;this.hr_width="Properties_hr_width_"+this.owner.name;this.hr_widthtype="Properties_hr_widthtype_"+this.owner.name;this.hr_height="Properties_hr_height_"+this.owner.name;this.hr_align="Properties_hr_align_"+this.owner.name;this.hr_noshading="Properties_hr_noshading_"+this.owner.name;};function HorizontalRulePI_apply(propName,propValue){switch(propName){case"id":if(propValue!=""){this.owner.inspectedNode.setAttribute('id',propValue);}else{this.owner.inspectedNode.removeAttribute('id');}
+break;case"width":var m=propValue.match(/(\d*)(px|%)?/);if(!m){document.getElementById(this.hr_width).value="";return;}
+propValue=m[1];var propWidthType=m[2];if(propWidthType){document.getElementById(this.hr_width).value=propValue;utility.dom.selectOption(document.getElementById(this.hr_widthtype),propWidthType);}else{propWidthType=document.getElementById(this.hr_widthtype).value;}
+this.owner.inspectedNode.removeAttribute("width");if(propValue!=""){this.owner.inspectedNode.style.width=propValue+propWidthType;}else{this.owner.inspectedNode.style.width="";}
+break;case"widthtype":var width=document.getElementById(this.hr_width).value;this.apply("width",width);break;case"height":this.owner.inspectedNode.style.height="";var m=propValue.match(/(\d*)(px|%)?/);if(!m){document.getElementById(this.hr_height).value="";return;}
+propValue=m[1];if(propValue!=""){this.owner.inspectedNode.size=Math.max(1,propValue);}else{this.owner.inspectedNode.removeAttribute("size");}
+break;case"align":if(propValue!=""){this.owner.inspectedNode.align=propValue;}else{this.owner.inspectedNode.removeAttribute("align");}
+break;case"noshading":var oldPropValue=this.owner.inspectedNode.noShade;if(propValue){this.owner.inspectedNode.noShade=false;}else{this.owner.inspectedNode.noShade=true;}
+break;}
+try{fixFocusHack(0);}
+catch(e){}};function HorizontalRulePI_inspect(propName,propValue){propValue=this.owner.inspectedNode.getAttribute("id");util_safeSetFieldValue(this.hr_id,propValue);propValue=this.owner.inspectedNode.getAttribute("width");var propWidthType="px";if(propValue){var m=propValue.match(/(\d*)([^\d]*)/);if(m){propValue=m[1];propWidthType=m[2];propWidthType=propWidthType?propWidthType:"px";}}
+if(!propValue){propValue=this.owner.inspectedNode.style.width;if(propValue){var m=propValue.match(/(\d*)([^\d]*)/);propValue=m[1];propWidthType=m[2];propWidthType=propWidthType?propWidthType:"px";}}
+util_safeSetFieldValue(this.hr_width,propValue);utility.dom.selectOption(document.getElementById(this.hr_widthtype),propWidthType);propValue=this.owner.inspectedNode.getAttribute("size");if(propValue){var m=propValue.match(/(\d*)([^\d]*)/);if(m){propValue=m[1];}}
+if(!propValue){propValue=this.owner.inspectedNode.style.height;if(propValue){var m=propValue.match(/(\d*)([^\d]*)/);propValue=m[1];}}
+util_safeSetFieldValue(this.hr_height,propValue);propValue=this.owner.inspectedNode.noShade;document.getElementById(this.hr_noshading).checked=!propValue;};HorizontalRulePI.prototype.apply=HorizontalRulePI_apply;HorizontalRulePI.prototype.inspect=HorizontalRulePI_inspect;window.KtmlPIObjects["hr"]=HorizontalRulePI;

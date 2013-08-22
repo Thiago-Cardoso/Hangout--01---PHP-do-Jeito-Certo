@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Image Editor</title>
+
+<link href="filebrowser.css" rel="stylesheet" type="text/css">
+<style>
+	label + input[type="checkbox"]{
+		position: relative;
+		top: 2px;
+	}
+	fieldset > table tr > td[class=downabit] {
+		padding: 6px 3px 0px 3px;
+	}
+	fieldset > table tr > td input[type=text]{
+		margin-top: 4px;
+	}
+</style>
+<script src="../../../resources/ktml.js"></script>
+<script src="../../../common/js/base.js"></script>
+<script src="../../../common/js/utility.js"></script>
+<script>if (is.mozilla) {
+	document.write('<meta http-equiv="Content-Type" content="text/html; cha'+'rset=' + opener.document.characterSet + '">');
+}</script>
+<script src="../../core/js/lib/language.js"></script>
+<script src="help.js"></script>
+<script src="dnd.js"></script>
+<script src="editimage.js"></script>
+<script src="image_cropper.js"></script>
+<script>
+	function util_preventEvent(o, e, functor) {
+	if (e.keyCode == 13) {
+		if (o.onchange) {
+			o.onchange();
+		} else if (o.onblur) {
+			o.onblur();
+		}
+		if (typeof functor=="function") {
+			functor();
+		}
+		return false;
+	}
+};
+</script>
+</head>
+
+<body onload="init()" class="ktml_dialog ktml_bg">
+<table border="0" cellspacing="3">
+	<tr>
+		<td>||Edit image||:</td>
+		<td nowrap="true" height="22" id="imageDetails">||Loading...||</td>
+		<td class="buttons">
+			<input  tabIndex="200" name="btn_help" id="btn_help" title="||Help||" type="image" src="../../core/img/help.gif" onMouseUp="help(); return false;" style="float: right" />
+		</td>
+	</tr>
+	<tr>
+		<td id="action_icons" class="ktml_panel" rowspan="2">
+			<div>
+				<input tabIndex="1" help_topic_id="image_editor_crop" class="btn_disabled" name="btn_crop" id="btn_crop" title="||Crop||" type="image" src="img/crop.gif" width="16" height="16" onclick="click_crop(this); return false;"><input  tabIndex="1" 
+					   help_topic_id="image_editor_resize" class="btn_disabled" name="btn_resize" id="btn_resize" title="||Resize||"  type="image" src="img/resize.gif" width="16" height="16" onclick="click_resize(this); return false;">
+			</div>
+			<img src="img/hspacer.gif"  height="2" border="0" class="hspacer">
+			<div>
+				<input tabIndex="1" help_topic_id="image_editor_rotate_left" class="btn_disabled" name="btn_rotate_left" id="btn_rotate_left" title="||Rotate left||"  type="image" src="img/rotate_left.gif" width="16" height="16" onClick="click_rotate(this, 270); return false;"><input  tabIndex="1" 
+					   help_topic_id="image_editor_rotate_right" class="btn_disabled" name="btn_rotate_right" id="btn_rotate_right" title="||Rotate right||"  type="image" src="img/rotate_right.gif" width="16" height="16" onClick="click_rotate(this, 90); return false;">
+			</div>
+			<div>
+				<input tabIndex="1" help_topic_id="image_editor_flip_v" class="btn_disabled" name="btn_flip_vertically" id="btn_flip_vertically" title="||Flip vertically||"  type="image" src="img/flip_v.gif" width="16" height="16" onClick="click_flip(this, 'vertical'); return false;"><input  tabIndex="1" 
+					   help_topic_id="image_editor_flip_h" class="btn_disabled" name="btn_flip_horizontally" id="btn_flip_horizontally" title="||Flip horizontally||"  type="image" src="img/flip_h.gif" width="16" height="16" onClick="click_flip(this, 'horizontal'); return false;">
+			</div>
+			<img src="img/hspacer.gif"  height="2" border="0" class="hspacer">
+			<div>
+				<input tabIndex="1" help_topic_id="image_editor_blur" class="btn_disabled" name="btn_blur" id="btn_blur" title="||Blur||"  type="image" src="img/blur.gif" width="16" height="16" onClick="click_blur(this, 10); return false;"><input  tabIndex="1" 
+					   help_topic_id="image_editor_sharpen" class="btn_disabled" name="btn_sharpen" id="btn_sharpen" title="||Sharpen||"  type="image" src="img/sharpen.gif" width="16" height="16" onClick="click_sharpen(this, 10); return false;">
+			</div>
+			<img src="img/hspacer.gif"  height="2" border="0" class="hspacer">
+			<div>
+				<input tabIndex="1" help_topic_id="image_editor_more_contrast" class="btn_disabled" name="btn_contrast_more" id="btn_contrast_more" title="||Increase contrast||"  type="image" src="img/contr_up.gif" width="16" height="16" onclick="click_contrast(this, 'increase'); return false;"><input  tabIndex="1" 
+					   help_topic_id="image_editor_less_contrast" class="btn_disabled" name="btn_contrast_less" id="btn_contrast_less" title="||Decrease contrast||"  type="image" src="img/contr_down.gif" width="16" height="16" onclick="click_contrast(this, 'decrease'); return false;">
+			</div>
+			<div>
+				<input tabIndex="1" help_topic_id="image_editor_more_brightness" class="btn_disabled" name="btn_brightness_more" id="btn_brightness_more" title="||Increase brightness||"  type="image" src="img/bright_up.gif" width="16" height="16" onclick="click_brightness(this, 'increase'); return false;"><input  tabIndex="1" 
+					   help_topic_id="image_editor_less_brightness" class="btn_disabled" name="btn_brightness_less" id="btn_brightness_less" title="||Decrease brightness||"  type="image" src="img/bright_down.gif" width="16" height="16" onclick="click_brightness(this, 'decrease'); return false;">
+			</div>
+			<img src="img/hspacer.gif"  height="2" border="0" class="hspacer">
+			<div>
+				<input tabIndex="1" help_topic_id="image_editor_compress" class="btn_disabled" name="btn_compress" id="btn_compress" title="||Compress image||"  type="image" src="img/compress.gif" width="16" height="16" onclick="click_compress(this); return false;">
+			</div>
+			<img src="img/hspacer.gif"  height="2" border="0" class="hspacer">
+			<div>
+				<input tabIndex="1" help_topic_id="image_editor_zoom_in" class="btn_disabled" id="btn_zoom_in" type="image" src="img/zoomin.gif" title="||Zoom in||" alt="||Zoom in||" onClick="zoom('in', this); return false;" width="16" height="16" /><input  tabIndex="1" 
+					   help_topic_id="image_editor_zoom_out" class="btn_disabled" id="btn_zoom_out" type="image" src="img/zoomout.gif" title="||Zoom out||" alt="||Zoom out||" onClick="zoom('out', this); return false;" width="16" height="16" />
+			</div>
+			<div>
+				<input tabIndex="1" help_topic_id="image_editor_reset_zoom" class="btn_disabled" id="btn_zoom_clear" type="image" src="img/zoomclear.gif" title="||Reset zoom||" onClick="zoom('clear', this); return false;" width="16" height="16" />
+			</div>
+			<img src="img/hspacer.gif"  height="2" border="0" class="hspacer">
+			<div>
+				<input tabIndex="1" help_topic_id="image_editor_undo" name="btn_undo" id="btn_undo" title="||Undo Edit Image||" type="image"  src="../../core/img/undo.gif" onClick="clickUndo(); return false;" class="btn_disabled"  width="16" height="16" />
+			</div>
+		</td>
+		<td id="file_preview" class="ktml_canvas">
+			<div id="theImageLoading">||Loading...||</div>
+			<div id="image">
+				<img id="theImage" src=""  onmousedown="return false">
+				<div id="theSelection" lockX="true" lockY="true"  onmousedown="return false"></div>
+				<div id="theShadow"></div>
+				<div id="theCropper" lockX="true" lockY="true" >
+					<img onmousedown="return false" id="theCropperImage" src="">
+					<div id="resize_handle_north" class="resize_handle"></div>
+					<div id="resize_handle_east" class="resize_handle"></div>
+					<div id="resize_handle_south" class="resize_handle"></div>
+					<div id="resize_handle_west" class="resize_handle"></div>
+				</div>
+			</div>
+		</td>
+		<td id="right_buttons" width="90" align="center">
+			<input tabIndex="100" help_topic_id="image_editor_finish" class="btn_disabled" name="finish" id="btn_finish" type="submit" value="||Finish||" onClick="clickFinish(); return false;" />
+			<input tabIndex="100" help_topic_id="image_editor_cancel" name="cancel" id="btn_cancel" type="submit" value="||Image Editor Cancel||" onClick="clickCancel(); return false;" />
+		</td>
+	</tr>
+	<tr>
+	<td colspan="2" class="actions_pi">
+		<div id="resize" style="display: none">
+			<fieldset class="ktml_fieldset"><legend class="ktml_legend" align="left">||Resize||</legend>			
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td class="downabit">||Width||:</td>
+						<td>
+							<input name="resize_width" id="resize_width" type="text" size="3" class="ktml_input" value="" 
+							 help_topic_id="image_editor_resize_width"
+								onChange="change_resize('width');" 
+								onKeyUp ="change_resize('width');" 
+								onkeypress="return util_preventEvent(this, event, function(){image_resize()});"
+								tabIndex="2"
+							/></td>
+						<td>
+						<label style="position: relative; top:-2px" for="keepProp">&nbsp;||Keep Aspect Ratio||</label><input 
+			 					id="keepProp"
+								name="imageField" 
+								title="||Constrain proportions||" 
+								type="checkbox"
+								checked="checked"
+								help_topic_id="image_editor_resize_constrain"
+								onclick="click_resize_constrain_proportions(this);"
+								 tabIndex="3"
+							/>
+						</td>
+						<td><input tabIndex="10" name="imageField" class="actInputs" value="||Apply||" help_topic_id="image_editor_resize_apply" type="button" onClick="image_resize(); return false;" /></td>
+					</tr>
+					<tr>
+						<td class="downabit">||Height||:</td>
+						<td>
+							<input name="resize_height" id="resize_height" type="text" size="3" class="ktml_input" value="" 
+								help_topic_id="image_editor_resize_height"
+								onChange="change_resize('height');" 
+								onKeyUp ="change_resize('height');" 	
+								onkeypress="return util_preventEvent(this, event, function(){image_resize()});"
+								 tabIndex="2"
+							/>
+						</td>
+						<td>&nbsp;</td>
+						<td><input tabIndex="10" name="imageField" class="actInputs" value="||Cancel||" help_topic_id="image_editor_resize_cancel" type="button" onClick="show(); return false;" /></td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+		<div id="compress" style="display: none">
+			<fieldset class="ktml_fieldset"><legend class="ktml_legend" align="left">||Compress||</legend>
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td style="vertical-align: middle">&nbsp;||Quality||:&nbsp;</td>
+						<td><input name="image_quality" 
+							help_topic_id="image_editor_compress_quality" 
+							id="image_quality" 
+							type="text" 
+							size="3" 
+							class="ktml_input" 
+							value="80" 
+							tabIndex="2"
+							onkeypress="return util_preventEvent(this, event, function(){image_compress()});" /></td>
+						<td style="vertical-align: middle">&nbsp;%&nbsp;</td>
+						<td style="vertical-align: middle"><input name="imageField" 
+							class="actInputs" 
+							value="||Apply||" 
+							help_topic_id="image_editor_compress_apply" 
+							type="button" 
+							 tabIndex="10"
+							onClick="image_compress(); return false;" /></td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+					    <td style="vertical-align: middle"><input name="imageField2" 
+							class="actInputs" 
+							value="||Cancel||"  
+							help_topic_id="image_editor_compress_cancel" 
+							type="button" 
+							 tabIndex="10"
+							onclick="show(); return false;" /></td>
+				    </tr>
+				</table>
+			</fieldset>
+		</div>
+		<div id="crop" style="display: none">
+			<fieldset class="ktml_fieldset"><legend class="ktml_legend" align="left">||Crop||</legend>
+				<input name="crop.x" id="crop.x" type="hidden" />
+				<input name="crop.y" id="crop.y" type="hidden" />
+				<input name="crop.displayx" id="crop.displayx" type="hidden" />
+				<input name="crop.displayy" id="crop.displayy" type="hidden" />
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td>||Width||:</td>
+						<td><input tabIndex="2" name="crop.width" id="crop.width" help_topic_id="image_editor_crop_width" type="text" size="3" class="ktml_input" /></td>
+						<td><input tabIndex="10" name="imageField" class="actInputs" value="||Apply||" help_topic_id="image_editor_crop_apply" type="button" onclick="image_crop(); return false;" /></td>
+					</tr>
+					<tr>
+						<td>||Height||:</td>
+						<td><input tabIndex="2" name="crop.height" id="crop.height" help_topic_id="image_editor_crop_height" type="text" size="3" class="ktml_input" /></td>
+						<td><input tabIndex="10" name="imageField" class="actInputs" value="||Cancel||" help_topic_id="image_editor_crop_cancel" type="button" onClick="show(); return false;"></td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+		<div id="default_pi">
+			<fieldset class="ktml_fieldset"><legend class="ktml_legend" align="left">||Info editor||</legend>
+				<table border="0" cellpadding="0">
+					<tr>
+						<td><div id="imageInfoL1">||Loading...||</div></td>
+					</tr>
+					<tr>
+						<td><div id="imageInfoL2">&nbsp;</div></td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+	</td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<html>
+<head>
+<title>Flash Properties</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="../../../../../common/js/base.js"></script>
+<script src="../../../../../common/js/utility.js"></script>
+<script src="../common.js"></script>
+</head>
+<body onLoad="initializeUI('embed_flash')">
+<!-- NOTE! 
+This is an Auto-Resizeable Multiple Panels property inspector, that is, its expanded width
+will be the actual width of the widest pannel it contains, regardless it is displayed or not.
+Do not delete the "ARMP" id. -->
+<div id="Properties_embed_flash___objectName__" class="property_body ktml_bg"> <nobr>
+  <table id="ARMP" border="0" >
+    <tr>
+      <td><div id="Properties_embed_flash_props_simple___objectName__">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="100%"><table border="0" cellpadding="0" cellspacing="0" class="introspector">
+                  <tr>
+                    <td nowrap="nowrap" style="text-align: left"><label style="white-space: nowrap !important" for="Properties_embed_flash_name___objectName__"
+									class="introspection_label">||Introspection ID Label||:&nbsp;</label></td>
+                    <td rowspan="2" nowrap="nowrap"><img ssrc="__relativeImagePath__/vspacer.gif" height="44" width="2" border="0" style="margin: 0px 3px"></td>
+                    <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" for="Properties_embed_flash_width___objectName__"
+									class="introspection_label">&nbsp;||W||:&nbsp;</label></td>
+                    <td nowrap="nowrap"><input name="Properties_embed_flash_width___objectName__" tabindex="2"
+									type="text"
+									id="Properties_embed_flash_width___objectName__"
+									size="3"
+									maxlength="6"
+									class="ktml_input"
+									help_topic_id="PI_flash_width"
+									onBlur="if (!util_checkMeasureUnit(this, 3000)) { return false;};window['ktml___objectName__'].introspector.apply('width', this.value);"
+									onkeypress="return util_preventEvent(this, event);"></td>
+                    <td nowrap="nowrap" style="white-space: nowrap !important">&nbsp;<input type="button" tabindex="4"
+					  				value="||Initial Size||"
+				  					class="ktml_button"
+				  					help_topic_id="PI_flash_size"
+				  					id="Properties_embed_flash_resetsize___objectName__"
+				  					onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};
+												window['ktml___objectName__'].introspector.clicked_button = this.id;
+						 						window['ktml___objectName__'].pis['embed_flash'].resetSize();
+				  						" 
+				  					style="width: 60px; margin:0px">&nbsp;</td>
+                    <td nowrap="nowrap" style="white-space: nowrap !important; text-align: right"><label style="white-space: nowrap !important" for="Properties_embed_flash_filename___objectName__"
+						  				class="introspection_label">&nbsp;||File||:&nbsp;</label></td>
+                    <td nowrap="nowrap" style="white-space: nowrap !important; text-align: right"><input name="Properties_embed_flash_filename___objectName__" tabindex="6"
+						  				type="text"
+						  				id="Properties_embed_flash_filename___objectName__"
+						  				size="40"
+						  				maxlength="600"
+						  				class="ktml_input"
+										style="width: 185px"
+						  				help_topic_id="PI_flash_file"
+						  				onBlur="window['ktml___objectName__'].introspector.apply('filename', this.value);"
+						  				onkeypress="return util_preventEvent(this, event);"></td>
+                    <td nowrap="nowrap" style="text-align: center;">&nbsp;<img ssrc="__relativeImagePath__/insert_flash.gif"
+					  				width="18"
+					  				height="18"
+									border="0"
+									help_topic_id="PI_flash_file"
+									id="Properties_embed_flash_src_browse___objectName__"
+									onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].openSelectFile({submode:'media', filter:'media', callback:[window['ktml___objectName__'].introspector, 'apply', 'filename']});"
+									__evstr__
+									align="absmiddle"
+									kttype="btn"/>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td nowrap="nowrap"><input name="Properties_embed_flash_id___objectName__" tabindex="1"
+							type="text"
+							id="Properties_embed_flash_id___objectName__"
+							size="12"
+							maxlength="255"
+							class="ktml_input"
+							help_topic_id="PI_flash_id"
+							onBlur="window['ktml___objectName__'].introspector.apply('id', this.value);"
+							onKeyPress="return util_preventEvent(this, event);">&nbsp;</td>
+                    <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" for="Properties_embed_flash_height___objectName__"
+									class="introspection_label">&nbsp;||H||:&nbsp;</label></td>
+                    <td nowrap="nowrap"><input name="Properties_embed_flash_height___objectName__" tabindex="3"
+									type="text"
+									id="Properties_embed_flash_height___objectName__"
+									size="3"
+									maxlength="6"
+									class="ktml_input"
+									help_topic_id="PI_flash_height"
+									onBlur="if (!util_checkMeasureUnit(this, 3000)) { return false;};window['ktml___objectName__'].introspector.apply('height', this.value);"
+									onkeypress="return util_preventEvent(this, event);"></td>
+                    <td nowrap="nowrap" style="white-space: nowrap">&nbsp;<input type="button" 
+                    				id="Properties_embed_flash_playstop1___objectName__"
+                    				tabindex="5"
+					  				value="||Play||"
+									class="ktml_button"
+									style="width: 60px; margin:0px;"
+									help_topic_id="PI_flash_play"
+									onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};
+												if (window['ktml___objectName__'].MediaPlayer){
+													window['ktml___objectName__'].introspector.apply('stop');
+													window['ktml___objectName__'].introspector.clicked_button = null;
+												} else {
+													window['ktml___objectName__'].introspector.clicked_button = this.id;
+													window['ktml___objectName__'].introspector.apply('start');
+												}" 
+									onbeforedeactivate="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};
+												if (window['ktml___objectName__'].MediaPlayer){
+													window['ktml___objectName__'].introspector.apply('stop');
+												}" 
+									 />&nbsp;</td>
+                    <td style="white-space: nowrap !important; text-align: right" nowrap="nowrap"><label style="white-space: nowrap !important" for="Properties_embed_flash_alternate___objectName__"
+									class="introspection_label">&nbsp;||Media Alternate||:&nbsp;</label></td>
+                    <td nowrap="nowrap" style="white-space: nowrap !important; text-align: right"><input type="text" tabindex="7"
+								class="ktml_input"
+								id="Properties_embed_flash_alternate___objectName__"
+								size="38"
+								style="width: 185px"
+								help_topic_id="PI_embed_flash_alternate"
+								onFocus="this.oldVal=this.value;"
+								onBlur="window['ktml___objectName__'].introspector.apply('alternate', this.value);"
+								onkeypress="return util_preventEvent(this, event);"/></td>
+                    <td nowrap="nowrap" style="white-space: nowrap !important; text-align: center">&nbsp;<img
+								ssrc="__relativeImagePath__/insert_image.gif"
+								alt = "||Introspection Browse for File||" title="||Introspection Browse for File||"
+								help_topic_id="PI_embed_flash_alternate"
+								id="Properties_embed_flash_alternate_browse___objectName__"
+								onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].openSelectFile({submode:'media', filter:'images', submode_detail:'forceurl', callback:[window['ktml___objectName__'].introspector, 'apply', 'alternate']});"
+								__evstr__
+								kttype="btn"/>&nbsp;</td>
+                  </tr>
+                </table></td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+        <div id="Properties_embed_flash_props_advanced___objectName__">
+          <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+              <td width="100%" style="text-align: left"><table border="0" cellpadding="0" cellspacing="0" 
+							class="introspector">
+                  <tr>
+                    <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" for="Properties_embed_flash_loop___objectName__"
+										class="introspection_label">&nbsp;||Loop||:&nbsp;</label></td>
+                    <td nowrap="nowrap" style="text-align: left"><input name="Properties_embed_flash_loop___objectName__" tabindex="200"
+										type="checkbox"
+										id="Properties_embed_flash_loop___objectName__"
+										value="true"
+										help_topic_id="PI_flash_loop"
+										onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].introspector.apply('loop', this.checked + '');" /></td>
+                    <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" for="Properties_embed_flash_hspace___objectName__"
+							 			class="introspection_label">&nbsp;||H Space||:&nbsp;</label></td>
+                    <td nowrap="nowrap"><input name="Properties_embed_flash_hspace___objectName__" tabindex="202"
+										type="text"
+										id="Properties_embed_flash_hspace___objectName__"
+										size="2"
+										maxlength="6"
+										class="ktml_input"
+										help_topic_id="PI_flash_H_space"
+										onBlur="if (!util_checkMeasureUnit(this, 3000)) { return false;};window['ktml___objectName__'].introspector.apply('hspace', this.value);"
+										onkeypress="return util_preventEvent(this, event);" />
+                      &nbsp;</td>
+                    <td nowrap="nowrap" style="white-space: nowrap !important; text-align: right"
+									class="introspection_label">&nbsp;||Quality||:&nbsp;</td>
+                    <td nowrap="nowrap"><select name="Properties_embed_flash_quality___objectName__" tabindex="204"
+										id="Properties_embed_flash_quality___objectName__" 
+										class="ktml_select"
+										style="width: 95px"
+										help_topic_id="PI_flash_quality"
+										onChange="window['ktml___objectName__'].introspector.apply('quality', this.value);">
+                        <option value="low">||Low||</option>
+                        <option value="autolow">||Auto Low||</option>
+                        <option value="" selected>||Auto High||</option>
+                        <option value="high">||High||</option>
+                      </select></td>
+                    <td nowrap="nowrap" 
+									style="white-space: nowrap !important; text-align: right"
+									class="introspection_label">&nbsp;||Align||:&nbsp;</td>
+                    <td colspan="2" nowrap="nowrap" style="text-align: left;"><select class="ktml_select" tabindex="206"
+										id="Properties_embed_flash_align___objectName__"
+										style="width: 115px;"
+										help_topic_id="PI_flash_align"
+										onChange="window['ktml___objectName__'].introspector.apply('align', this.value);">
+                        <option value="">||Introspection Option Default||</option>
+                        <option value="baseline">||Introspection Option Baseline||</option>
+                        <option value="top">||Introspection Option Top||</option>
+                        <option value="middle">||Introspection Option Middle||</option>
+                        <option value="bottom">||Introspection Option Bottom||</option>
+                        <option value="texttop">||Texttop||</option>
+                        <option value="absmiddle">||AbsoluteMiddle||</option>
+                        <option value="absbottom">||AbsoluteBottom||</option>
+                        <option value="left">||Introspection Option Left||</option>
+                        <option value="right">||Introspection Option Right||</option>
+                      </select></td>
+                    <td nowrap="nowrap" style="vertical-align: top; text-align: left; white-space: nowrap !important">&nbsp;
+                      <input type="button" 
+                    				id="Properties_embed_flash_playstop2___objectName__"
+                    				tabindex="105"
+					  				value="||Play||"
+									class="ktml_button"
+									style="width: 60px; margin:0px;"
+									help_topic_id="PI_flash_play"
+									onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};
+												if (window['ktml___objectName__'].MediaPlayer){
+													window['ktml___objectName__'].introspector.apply('stop');
+													window['ktml___objectName__'].introspector.clicked_button = null;
+												} else {
+													window['ktml___objectName__'].introspector.clicked_button = this.id;
+													window['ktml___objectName__'].introspector.apply('start');
+												}" 
+									onbeforedeactivate="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};
+												if (window['ktml___objectName__'].MediaPlayer){
+													window['ktml___objectName__'].introspector.apply('stop');
+												}" 
+									 />&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" for="Properties_embed_flash_play___objectName__" 
+										class="introspection_label">&nbsp;||Autoplay||:&nbsp;</label></td>
+                    <td nowrap="nowrap" style="text-align: left"><input name="Properties_embed_flash_play___objectName__" tabindex="201"
+										type="checkbox"
+										id="Properties_embed_flash_play___objectName__"
+										value="true"
+										help_topic_id="PI_flash_autoplay"
+										onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].introspector.apply('play', this.checked);"></td>
+                    <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" for="Properties_embed_flash_vspace___objectName__"
+										class="introspection_label">&nbsp;||V Space||:&nbsp;</label></td>
+                    <td nowrap="nowrap"><input name="Properties_embed_flash_vspace___objectName__" tabindex="203"
+										type="text"
+										id="Properties_embed_flash_vspace___objectName__"
+										size="2"
+										maxlength="6"
+										class="ktml_input"
+										help_topic_id="PI_flash_V_space"
+										onBlur="if (!util_checkMeasureUnit(this, 3000)) { return false;};window['ktml___objectName__'].introspector.apply('vspace', this.value);"
+										onkeypress="return util_preventEvent(this, event);"></td>
+                    <td nowrap="nowrap"
+									style="white-space: nowrap !important; text-align: right"
+									class="introspection_label">&nbsp;||Scale||:&nbsp;</td>
+                    <td nowrap="nowrap"><select name="Properties_embed_flash_scale___objectName__" tabindex="205"
+										id="Properties_embed_flash_scale___objectName__"
+										class="ktml_select"
+										style="width: 95px"
+										help_topic_id="PI_flash_scale"
+										onChange="window['ktml___objectName__'].introspector.apply('scale', this.value);">
+                        <option selected value="">||Default - Show all||</option>
+                        <option value="noborder">||No border||</option>
+                        <option value="exactfit">||Exact fit||</option>
+                      </select></td>
+                    <td nowrap="nowrap" style="text-align: right"><label style="white-space: nowrap !important" for="Properties_embed_flash_bgcolor___objectName__"
+										class="introspection_label">&nbsp;||Bg||:&nbsp;</label></td>
+                    <td nowrap="nowrap"><input type="text" tabindex="207"
+										class="ktml_input"
+										style="width: 88px; max-width: 95px"
+										id="Properties_embed_flash_bgcolor___objectName__"
+										size="8"
+										onkeyup="PropertiesUI_colorValue(this);"
+										help_topic_id="PI_flash_bg_color"
+										onBlur="window['ktml___objectName__'].introspector.apply('bgColor', this.value);"
+										onkeypress="return util_preventEvent(this, event);"/></td>
+                    <td nowrap="nowrap"><table border="0" cellpaddig="0" cellspacing="0">
+                      <tr>
+                        <td><img help_topic_id="PI_flash_bgcolor"
+											onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].introspector.chooseBgColor(this, 'Properties_embed_flash_bgcolor___objectName__');"
+											ssrc="__relativeImagePath__/bgcolor.gif"
+											width="16" height="12" vspace="4" hspace="2"
+											border="0"
+											__evstr__
+											kttype="btn"/><span class="colorMonitor"
+											id="Properties_embed_flash_bgcolorMonitor___objectName__">&nbsp;</span></td>
+                      </tr>
+                    </table></td>
+                    <td nowrap="nowrap">&nbsp;</td>
+                  </tr>
+                </table></td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </div></td>
+      <td valign="top" style="text-align: right; vertical-align: top" id="toggle button"><input type="button" tabindex="100"
+					value="||Advanced||" 
+					class="ktml_button"
+						style="width:60px;"
+						id="Properties_embed_flash_props_simple_btn___objectName__"
+						help_topic_id="PI_flash_advanced"
+						onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};Introspection_toggleAdvanced('__objectName__', 'embed_flash')">
+        <input type="button" tabindex="209"
+						value="||Simple||" 
+						class="ktml_button"
+						style="width:60px; display: none;"
+						id="Properties_embed_flash_props_advanced_btn___objectName__"
+						help_topic_id="PI_flash_simple"
+						onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};Introspection_toggleAdvanced('__objectName__', 'embed_flash')">
+      </td>
+    </tr>
+  </table>
+  </nobr> </div>
+</body>
+</html>

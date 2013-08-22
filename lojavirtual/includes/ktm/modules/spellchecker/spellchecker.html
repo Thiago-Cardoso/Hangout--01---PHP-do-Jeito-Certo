@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link href="../../core/styles/popup.css" rel="stylesheet" type="text/css">
+
+<script src="../../../common/js/base.js"></script>
+<script src="../../../common/js/utility.js"></script>
+<script>if (is.mozilla) {
+	document.write('<meta http-equiv="Content-Type" content="text/html; cha'+'rset=' + opener.document.characterSet + '">');
+}</script>
+<title>Spellcheck</title>
+<script src="../../core/js/lib/language.js"></script>
+<script src="spellcheck.js"></script>
+<script>
+function init() {
+	if (is.ie) {
+		document.charset = opener.document.charset;
+	}
+	utility.window.setModal();
+	getvars = new QueryString();
+	ktml = window.opener.ktmls[getvars.find('id')];
+	document.body.innerHTML = lang_translatepage(document.body.innerHTML, ktml.config.UILanguage, window.topOpener);
+
+	spellchecker = new SpellChecker(getvars.find('id'), ktml.defaults.spellcheck_language);
+
+	mainTableTable = document.getElementById("mainTable");
+	mainTableTable.style.display = "";
+	window.setTimeout("spellchecker.boot_step_1()", 100);
+}
+
+function unload() {
+	if(opener && !opener.closed && ktml && ktml.undo) {
+		ktml.undo.addEdit();
+	}
+}
+function openHelp(helpStr) {
+	if(opener && !opener.closed && ktml && ktml.undo) {
+		ktml.toolbar.showHelp(helpStr);
+	}
+}
+function window_keyHandler(e) {
+	if (typeof e == 'undefined') {
+		e = window.event;
+	}
+	if (e.keyCode == 27) {
+		utility.window.close();	
+	}
+}
+window.onload = init;
+window.onunload = unload;
+</script>
+</head>
+
+<body class="ktml_dialog ktml_bg" onkeyup="window_keyHandler(event)">
+<table style="display:none; margin: 3px;"
+	id="mainTable"
+	width="100%"
+	border="0"
+	cellpadding="0"
+	cellspacing="0">
+	<tr>
+		<td>
+			<fieldset class="ktml_fieldset" style="margin-bottom:0px;padding: 5px; padding-bottom:12px;">
+				<legend class="ktml_legend">&nbsp;||Spellcheck||&nbsp;</legend>
+				<div>
+					<label for="notWord"
+						class="ktml_label">||Spellchecker notinddict||:</label>
+				</div>
+				<div>
+					<input type="text"
+						id="notInDictionary" 
+						style="width:250px;"
+						disabled=""
+						class="ktml_input"></div>
+				<div style="margin-top:7px;">
+				<label for="repWord"
+					class="ktml_label">||Spellchecker replace||:</label>
+				</div>
+				<div><input type="text"
+					id="replaceWith"
+					style="width:250px;"
+					class="ktml_input"
+					onChange="spellchecker.setReplacementWord(this.value)"></div>
+				<div style="margin-top:7px;">
+					<label for="sugg"
+						class="ktml_label">||Spellchecker suggestions||:</label>
+				</div>
+				<select id="suggestionList"
+					size="7"
+					style="width:250px; height: 100px; font-size: 12px"
+					onclick="spellchecker.setReplacementWord(this.value);"
+					ondblclick="spellchecker.change();"></select>
+				<div style="margin-top:7px;">
+					<label for="spellcheck_dialect"
+						class="ktml_label">||Language:||</label>
+					<select name="select"
+						class="ktml_select"
+						style="display: block; width:250px;"
+						id="spellcheck_dialect"
+						onchange="changeLanguage(this)">
+						<option value="$isocode|dictname|pspell|aspell"></option>
+					</select>
+				</div>
+			</fieldset>
+		</td>
+		<td rowspan="2"
+			style="width: 10px; background: url(img/sep3.gif) repeat-y center">&nbsp;</td>
+		<td rowspan="2" style="padding: 0 5px">
+			<input type="button"
+				onclick="spellchecker.ignore();"
+				class="ktml_button"
+				style="width: 80px; margin: 3px 3px 0 0; display: block"
+				value="||Spellchecker ignore||"/>
+			<input type="button"
+				onclick="spellchecker.ignoreAll();"
+				class="ktml_button"
+				style="width: 80px; margin: 3px 3px 0 0; display: block"
+				value="||Spellchecker ignoreall||"/>
+			<input type="button"
+				onclick="spellchecker.addToDictionary();"
+				class="ktml_button"
+				style="width: 80px; margin: 3px 3px 0 0; display: block"
+				value="||Spellchecker adddict||"/>
+			<img class="hsep" src="../../core/img/sep2.gif" src="g" style="width: 80px; margin: 7px 0 5px 0">
+			<input type="button"
+				onclick="spellchecker.change();"
+				class="ktml_button"
+				style="width: 80px; margin: 3px 3px 0 0; display: block"
+				value="||Spellchecker change||"/>
+			<input type="button"
+				onclick="changeAll_clicked()"
+				class="ktml_button"
+				style="width: 80px; margin: 3px 3px 0 0; display: block"
+				value="||Spellchecker changeall||"></td></tr>
+			<tr>
+			<td style="text-align: right;">
+				<input type="button"
+					onclick="ktml.cw.focus();utility.window.close();"
+					class="ktml_button"
+					style="width: 60px; margin: 3px 3px 0 0"
+					value="||Spellchecker cancel||"/>
+				<input type="button"
+					onclick="openHelp('spellcheck_window');"
+					class="ktml_button"
+					style="width: 60px; margin: 3px 3px 0 0"
+					value="||Help||"/></td></tr>
+		</table>
+</body>
+</html>	

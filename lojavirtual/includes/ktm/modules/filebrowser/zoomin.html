@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>&nbsp;</title>
+
+<link href="filebrowser.css" rel="stylesheet" type="text/css">
+
+<style>
+#template_content {
+	width:auto;
+	height:543px;
+	overflow:auto;
+	background-color:white;
+	border: 1px outset white;
+	padding:10px;
+}
+#buttons {
+	width:auto;
+	height:20px;
+	text-align:center;
+	background-color:buttonface;
+	border: 1px outset white
+}
+</style>
+<script src="../../../common/js/base.js"></script>
+<script src="../../../common/js/utility.js"></script>
+<script src="../../core/js/lib/language.js"></script>
+<script>
+function init() {
+	document.title = lang_translatepage("||Template||", opener.ktml.config.UILanguage, opener.topOpener);
+	document.body.innerHTML = lang_translatepage(document.body.innerHTML, opener.ktml.config.UILanguage, opener.topOpener);
+	document.getElementById("template_content").innerHTML = opener.file_list.get_item(opener.current_file).template_content;
+}
+function clicked_close() {
+	utility.window.hideModalBlocker(window.topOpener);
+	window.setTimeout("utility.window.close()", 1);
+}
+function window_keyHandler(e) {
+	if(e.keyCode == 27) {
+		utility.window.close();	
+	}
+}
+</script>
+</head>
+
+<body onload="init()" onkeydown="window_keyHandler(event)"  scroll="no" class="ktml_dialog ktml_bg">
+<div id="template_content"></div>
+<div id="buttons"><input type="button" class="ktml_button" value="||Close||" onclick="clicked_close()"/></div>
+</body>
+</html>

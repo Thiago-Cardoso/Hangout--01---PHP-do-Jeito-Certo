@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>List Item Properties</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="../../../../../common/js/base.js"></script>
+<script src="../../../../../common/js/utility.js"></script>
+<script src="../common.js"></script>
+</head>
+
+<body onLoad="initializeUI('li')">
+<div id="Properties_li___objectName__" class="property_body ktml_bg">
+	<nobr>
+		<table border="0" cellpadding="0" cellspacing="0" class="introspector">
+		<tr>
+		  <td nowrap="nowrap" style="white-space: nowrap !important; text-align: left">&nbsp;||Introspection ID Label||:&nbsp;</td>
+		  <td rowspan="2" nowrap="nowrap"><img ssrc="__relativeImagePath__/vspacer.gif" height="44" width="2" border="0" style="margin: 0px 3px"></td>
+		  <td nowrap="nowrap" style="text-align: right">
+			  <label help_topic_id="PI_list_item_shape"
+			  		style="white-space: nowrap !important; display: none;"
+			  		id="Properties_li_ul_type_label___objectName__"
+					class="ktml_label">&nbsp;||Bullet shape||:&nbsp;</label>
+			  <label style="white-space: nowrap !important; display: none; width: 100px"
+			  		id="Properties_li_ol_type_label___objectName__"
+					class="ktml_label">&nbsp;||Numbering type||:&nbsp;</label></td>
+			<td nowrap="nowrap">
+				<select class="ktml_select"
+					id="Properties_li_ul_type___objectName__"
+					help_topic_id="PI_list_item_shape"
+					onChange="window['ktml___objectName__'].introspector.apply('type', this.value);"
+					style="width:120px; display:none;">
+						<option value="disc">||Introspection disc||</option>
+						<option value="circle">||Introspection circle||</option>
+						<option value="square">||Introspection square||</option></select>
+				<select class="ktml_select"
+					id="Properties_li_ol_type___objectName__"
+					help_topic_id="PI_list_item_type"
+					onChange="window['ktml___objectName__'].introspector.apply('type', this.value);"
+					style="width:120px; display:none;">
+						<option value="">1. ||Introspection arabic default||</option>
+						<option value="a">a. ||Introspection lower alpha||</option>
+						<option value="A">A. ||Introspection upper alpha||</option>
+						<option value="i">i. ||Introspection lower roman||</option>
+						<option value="I">I. ||Introspection upper roman||</option></select>			</td>
+		</tr>
+		<tr>
+		  <td nowrap="nowrap" style="text-align:left">&nbsp;<input name="Properties_li_id___objectName__"
+				tabindex="1"
+				type="text"
+				class="ktml_input"
+				id="Properties_li_id___objectName__"
+				help_topic_id="PI_list_item_id"
+				onBlur="window['ktml___objectName__'].introspector.apply('id', this.value);"
+				onKeyPress="return util_preventEvent(this, event);"
+				size="12"/>&nbsp;</td>
+		  <td id="Properties_li_val_field1___objectName__" 
+		  	nowrap="nowrap" 
+		  	style="white-space: nowrap !important; text-align: right">
+		  		<label for="Properties_li_value___objectName__">&nbsp;||Start at||:&nbsp;</label></td>
+		  <td id="Properties_li_val_field2___objectName__"
+		  	nowrap="nowrap" 
+		  	style="white-space: nowrap !important; text-align: left"><input type="text"
+				class="ktml_input"
+				id="Properties_li_value___objectName__"
+				style="width: 50"
+				size="8"
+				help_topic_id="PI_list_item_value"
+				onBlur="if (!util_checkMeasureUnit(this, null, true)) { return false;};window['ktml___objectName__'].introspector.apply('value', this.value);"
+				onkeypress="return util_preventEvent(this, event);"/></td>
+		</tr>
+	</table>
+	</nobr>
+</div>
+</body>
+</html>

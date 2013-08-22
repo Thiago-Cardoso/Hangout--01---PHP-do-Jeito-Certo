@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>Row Properties</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="../../../../../common/js/base.js"></script>
+<script src="../../../../../common/js/utility.js"></script>
+<script src="../common.js"></script>
+</head>
+
+<body onLoad="initializeUI('tr')">
+<div id="Properties_tr___objectName__" class="property_body ktml_bg">
+	<nobr>
+	<table border="0" class="introspector">
+		<tr>
+		<td rowspan="2">
+			<table border="0" cellpadding="0" cellspacing="0">
+				<tr>
+				  <td nowrap="nowrap" class="introspector" style="white-space: nowrap !important; text-align: left">||Introspection ID Label||:&nbsp;</td>
+				  <td rowspan="2" nowrap="nowrap" class="introspector"><img ssrc="__relativeImagePath__/vspacer.gif" height="44" width="2" border="0" style="margin: 0px 3px"></td>
+				  <td style="white-space: nowrap !important; text-align: right" 
+						nowrap="nowrap" >&nbsp;||Introspection Align||:&nbsp;</td>
+					<td nowrap="nowrap" >
+						<select style="width: 70"
+							class="ktml_select"
+							id="Properties_tr_align___objectName__"
+							help_topic_id="PI_row_H_align"
+							onChange="window['ktml___objectName__'].introspector.apply('align', this.value);" />
+							<option value="">||Introspection Option Default||</option>
+							<option value="left">||Introspection Option Left||</option>
+							<option value="right">||Introspection Option Right||</option>
+							<option value="center">||Introspection Option Center||</option>
+						</select></td>
+					<td style="white-space: nowrap !important; text-align: right">&nbsp;||Introspection NoWrap||:&nbsp;</td>
+					<td><input type="checkbox"
+							id="Properties_tr_nowrap___objectName__"
+							help_topic_id="PI_row_no_wrap"
+							onclick="window['ktml___objectName__'].introspector.apply('nowrap', this.checked);"/></td></tr>							
+				<tr>
+				  <td nowrap="nowrap" class="introspector" style="text-align:left"><input name="Properties_tr_id___objectName__"
+						tabindex="1"
+						type="text"
+						class="ktml_input"
+						id="Properties_tr_id___objectName__"
+						help_topic_id="PI_row_id"
+						onBlur="window['ktml___objectName__'].introspector.apply('id', this.value);"
+						onKeyPress="return util_preventEvent(this, event);"
+						size="12"/></td>
+				  <td nowrap="nowrap" 
+						style="white-space: nowrap !important; text-align: right">&nbsp;||Introspection VAlign||:&nbsp;</td>
+					<td nowrap="nowrap">
+						<select style="width: 70px"
+							class="ktml_select"
+							id="Properties_tr_valign___objectName__"
+							help_topic_id="PI_row_V_align"
+							onChange="window['ktml___objectName__'].introspector.apply('vAlign', this.value);" >
+							<option value="">||Introspection Option Default||</option>
+							<option value="top">||Introspection Option Top||</option>
+							<option value="bottom">||Introspection Option Bottom||</option>
+							<option value="baseline">||Introspection Option Baseline||&nbsp;</option>
+							<option value="middle">||Introspection Option Middle||</option></select></td>
+					<td style="white-space: nowrap !important; text-align: right" 
+						nowrap="nowrap">&nbsp;||Header||:&nbsp;</td>
+					<td nowrap="nowrap">
+						<input type="checkbox"
+							id="Properties_tr_header___objectName__"
+							help_topic_id="PI_row_header"
+							onclick="window['ktml___objectName__'].introspector.apply('header', this.checked?'th':'td');"/></td></tr>
+			</table></td>
+		<td style="white-space: nowrap !important; text-align:right" 
+			nowrap="nowrap">&nbsp;||Introspection BG||:&nbsp;</td>
+		<td nowrap="nowrap" 
+			colspan="4" style="text-align: left">
+			<input type="text"
+				id="Properties_tr_bgimage___objectName__"
+				class="ktml_input"
+				size="37"
+				style="width:217px"
+				help_topic_id="PI_row_bg_image"
+				onBlur="window['ktml___objectName__'].introspector.apply('bgimage', this.value);"
+				onkeypress="return util_preventEvent(this, event);"/></td>
+		<td style="text-align: left"><img alt="||Row bg Img||"
+				alt = "||Introspection Browse for File||" title="||Introspection Browse for File||"
+				ssrc="__relativeImagePath__/insert_image.gif"
+				help_topic_id="PI_row_bg_image"
+				id="Properties_tr_bgimage_browse___objectName__"
+				onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].openSelectFile({submode:'media', filter:'images', callback:[window['ktml___objectName__'].introspector, 'apply', 'bgimage']});"
+				__evstr__
+				kttype="btn"/></td></tr>
+	<tr>
+		<td style="white-space: nowrap !important; text-align:right" 
+			nowrap="nowrap">&nbsp;||Introspection BGColor||:&nbsp;</td>
+		<td nowrap="nowrap" style="text-align: left">
+			<input type="text"
+				class="ktml_input"
+				id="Properties_tr_bgcolor___objectName__"
+				size="8"
+				onkeyup="PropertiesUI_colorValue(this);"
+				help_topic_id="PI_row_bg_color"
+				onBlur="window['ktml___objectName__'].introspector.apply('bgColor', this.value);"
+				onkeypress="return util_preventEvent(this, event);"/></td>
+		<td><img alt="||Row bg color||"
+					title = "||Row bg color||"
+					help_topic_id="PI_row_bg_color"
+					onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].introspector.chooseBgColor(this, 'Properties_tr_bgcolor___objectName__');"
+					ssrc="__relativeImagePath__/bgcolor.gif"
+					width="16" height="12" vspace="4" hspace="2"
+					__evstr__
+					kttype="btn"/><span class="colorMonitor"
+						id="Properties_tr_bgColorMonitor___objectName__">&nbsp;</span></td>
+		<td style="white-space: nowrap !important; text-align:right" 
+			nowrap="nowrap">&nbsp;||Introspection BrdColor||:</td>
+		<td nowrap="nowrap" style="text-align:right">
+			<input type="text"
+				class="ktml_input"
+				id="Properties_tr_brdcolor___objectName__"
+				size="8"
+				onkeyup="PropertiesUI_colorValue(this);"
+				help_topic_id="PI_row_border_color"
+				onBlur="window['ktml___objectName__'].introspector.apply('borderColor', this.value);"
+				onkeypress="return util_preventEvent(this, event);"/></td>					
+		<td style="text-align: left"><img alt="||Row bg color||"
+				title = "||Row brd color||"
+				help_topic_id="PI_row_border_color"
+				onclick="if(window['ktml___objectName__'].toolbar.checkHelp()){return true;};window['ktml___objectName__'].introspector.chooseBrdColor(this, 'Properties_tr_brdcolor___objectName__');"
+				ssrc="__relativeImagePath__/bgcolor.gif"
+				width="16" height="12" vspace="4" hspace="2"
+				__evstr__
+				kttype="btn"/><span class="colorMonitor"
+					id="Properties_tr_brdColorMonitor___objectName__"></span></td></tr>
+	</table>
+	</nobr>
+</div>
+</body>
+</html>
